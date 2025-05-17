@@ -1,29 +1,16 @@
-#!/bin/zsh
+#!/bin/bash
 
-echo "[*] Removing Roblox and MacSploit..."
+echo "[*] Uninstalling Roblox and MacSploit..."
 
-# Roblox paths
-ROBLOX_PATHS=(
-  "$HOME/Library/Application Support/Roblox"
-  "$HOME/Library/Logs/Roblox"
-  "$HOME/Library/Caches/com.roblox.Roblox"
-  "/Applications/Roblox.app"
-)
+# Roblox
+rm -rf "$HOME/Library/Application Support/Roblox"
+rm -rf "$HOME/Library/Logs/Roblox"
+rm -rf "$HOME/Library/Caches/com.roblox.Roblox"
+rm -rf "/Applications/Roblox.app"
 
-# MacSploit paths
-MACSPLOIT_PATHS=(
-  "$HOME/Library/Application Support/MacSploit"
-  "/Applications/MacSploit.app"
-)
+# MacSploit
+rm -rf "$HOME/Library/Application Support/MacSploit"
+rm -rf "/Applications/MacSploit.app"
 
-for path in "${ROBLOX_PATHS[@]}" "${MACSPLOIT_PATHS[@]}"; do
-  if [ -e "$path" ]; then
-    echo "Deleting $path"
-    rm -rf "$path"
-  else
-    echo "Not found: $path"
-  fi
-done
-
-echo "[*] Reinstalling..."
+echo "[*] Installing MacSploit..."
 cd ~ && curl -s "https://git.raptor.fun/main/install.sh" | bash </dev/tty
