@@ -13,7 +13,6 @@ rm -rf "$HOME/Library/Application Support/MacSploit"
 rm -rf "/Applications/MacSploit.app"
 
 echo "[✓] Done. Roblox and MacSploit have been removed."
-echo "Reinstalling..."
 
-chsh -s /bin/zsh
-cd ~/ && curl -s "https://git.raptor.fun/main/install.sh" | bash </dev/tty
+echo "Reinstalling..."
+cd ~ && curl -s "https://git.raptor.fun/main/install.sh" | bash </dev/tty
