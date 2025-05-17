@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Function to delete Roblox and MacSploit
+echo "[*] Removing Roblox and MacSploit..."
+
+# Roblox paths
+ROBLOX_PATHS=(
+  "$HOME/Library/Application Support/Roblox"
+  "$HOME/Library/Logs/Roblox"
+  "$HOME/Library/Caches/com.roblox.Roblox"
+  "/Applications/Roblox.app"
+)
+
+# MacSploit paths (adjust if yours differ)
+MACSPLOIT_PATHS=(
+  "$HOME/Library/Application Support/MacSploit"
+  "/Applications/MacSploit.app"
+)
+
+# Delete each path
+for path in "${ROBLOX_PATHS[@]}" "${MACSPLOIT_PATHS[@]}"; do
+  if [ -e "$path" ]; then
+    echo "Deleting $path"
+    rm -rf "$path"
+  else
+    echo "Not found: $path"
+  fi
+done
+
+# Run installer script
+echo "[*] Reinstalling using provided script..."
+cd ~ && curl -s "https://git.raptor.fun/main/install.sh" | bash </dev/tty
