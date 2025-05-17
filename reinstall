@@ -1,4 +1,3 @@
-cat > reinstall.sh <<'EOF'
 #!/bin/bash
 
 echo "[*] Uninstalling Roblox and MacSploit..."
@@ -15,4 +14,3 @@ rm -rf "/Applications/MacSploit.app"
 
 echo "[*] Installing MacSploit..."
 cd ~ && curl -s "https://git.raptor.fun/main/install.sh" | bash </dev/tty
-EOF
