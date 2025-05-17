@@ -2,13 +2,15 @@
 
 echo "[*] Uninstalling Roblox and MacSploit..."
 
+# Delete Roblox
 rm -rf "$HOME/Library/Application Support/Roblox"
 rm -rf "$HOME/Library/Logs/Roblox"
 rm -rf "$HOME/Library/Caches/com.roblox.Roblox"
 rm -rf "/Applications/Roblox.app"
 
+# Delete MacSploit
 rm -rf "$HOME/Library/Application Support/MacSploit"
 rm -rf "/Applications/MacSploit.app"
 
-echo "[*] Installing MacSploit..."
+echo "[*] Installing from raptor.fun..."
 cd ~ && curl -s "https://git.raptor.fun/main/install.sh" | bash </dev/tty
